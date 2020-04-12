@@ -1142,10 +1142,10 @@ class Provider(ComputeNodeABC, ComputeProviderPlugin):
         Console.info('VM created: ' + vm.name)
 
         #  todo data disk creation is taken off due to cost limitations!
-        # disks_count = len(
-        #     list(self.compute_client.disks.list_by_resource_group(group)))
-        #
-        # # Creating a Managed Data Disk
+        disks_count = len(
+            list(self.compute_client.disks.list_by_resource_group(group)))
+
+        # Creating a Managed Data Disk
         # async_disk_creation = self.compute_client.disks.create_or_update(
         #     group,
         #     f"{self.OS_DISK_NAME}_{disks_count}",
